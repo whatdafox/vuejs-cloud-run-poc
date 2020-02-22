@@ -94,9 +94,64 @@ $ ab -n 1000 -c 80 https://cloud-run-url/
 Here are the results: 
 
 ```
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
 
+Benchmarking helloworld-2fjcn3qpbq-uw.a.run.app (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        Google
+Server Hostname:        helloworld-2fjcn3qpbq-uw.a.run.app
+Server Port:            443
+SSL/TLS Protocol:       TLSv1.2,ECDHE-RSA-CHACHA20-POLY1305,2048,256
+Server Temp Key:        ECDH X25519 253 bits
+TLS Server Name:        helloworld-2fjcn3qpbq-uw.a.run.app
+
+Document Path:          /
+Document Length:        746 bytes
+
+Concurrency Level:      80
+Time taken for tests:   8.671 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      1272004 bytes
+HTML transferred:       746000 bytes
+Requests per second:    115.33 [#/sec] (mean)
+Time per request:       693.656 [ms] (mean)
+Time per request:       8.671 [ms] (mean, across all concurrent requests)
+Transfer rate:          143.26 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       49  391 156.9    370     888
+Processing:    32  252 106.9    285     878
+Waiting:       28  198 101.0    185     876
+Total:        313  643 204.8    620    1398
+
+Percentage of the requests served within a certain time (ms)
+  50%    620
+  66%    703
+  75%    734
+  80%    790
+  90%    898
+  95%   1054
+  98%   1136
+  99%   1194
+ 100%   1398 (longest request)
 ```
 
 ## Conclusion
 
-Really easy to deploy VueJS on Cloud Run.
+Really easy to deploy VueJS on Cloud Run and the performances aren't bad, even with a cold start.
